@@ -10,8 +10,8 @@ public class Gato extends Animal {
     public Gato() {
     }
 
-    public Gato(String nome, String especie, String raca, String genero, String comportameto, String habitos) {
-        super(nome, especie, raca, genero);
+    public Gato(String nome, String especie, String raca, String sexo, String comportameto, String habitos) {
+        super(nome, especie, raca, sexo);
         this.comportamento = comportameto;
         this.habitos = habitos;
     }

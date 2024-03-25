@@ -10,8 +10,8 @@ public class Cachorro extends Animal {
     public Cachorro() {
     }
 
-    public Cachorro(String nome, String especie, String raca, String genero, String pelagem, String porte) {
-        super(nome, especie, raca, genero);
+    public Cachorro(String nome, String especie, String raca, String sexo, String pelagem, String porte) {
+        super(nome, especie, raca, sexo);
         this.pelagem = pelagem;
         this.porte = porte;
     }

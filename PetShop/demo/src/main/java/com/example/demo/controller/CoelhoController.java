@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Coelho;
 import com.example.demo.repository.CoelhoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class CoelhoController {
     }
 
     @PostMapping
-    public Coelho criar (@RequestBody Coelho coelho) {
+    public Coelho criar (@Valid @RequestBody Coelho coelho) {
         return coelhoRepository.save(coelho);
     }
 }

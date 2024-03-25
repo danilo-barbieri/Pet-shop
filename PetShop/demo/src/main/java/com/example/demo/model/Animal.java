@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.validation.AnimalType;
+import com.example.demo.validation.Genero;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -24,16 +25,19 @@ public class Animal {
 
     private String raca;
 
-    private String genero;
+    @NotNull
+    @Genero
+    @Column(nullable = false)
+    private String sexo;
 
     public Animal() {
     }
 
-    public Animal(String nome, String especie, String raca, String genero) {
+    public Animal(String nome, String especie, String raca, String sexo) {
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
-        this.genero = genero;
+        this.sexo = sexo;
     }
 
     public Long getId() {
@@ -68,11 +72,11 @@ public class Animal {
         this.raca = raca;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }

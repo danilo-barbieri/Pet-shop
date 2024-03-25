@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Gato;
 import com.example.demo.repository.GatoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class GatoController {
     }
 
     @PostMapping
-    public Gato criar (@RequestBody Gato gato) {
+    public Gato criar (@Valid @RequestBody Gato gato) {
         return gatoRepository.save(gato);
     }
 }

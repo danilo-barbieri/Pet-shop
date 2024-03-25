@@ -10,8 +10,8 @@ public class Coelho extends Animal {
     public Coelho() {
     }
 
-    public Coelho(String nome, String especie, String raca, String genero, String tipoOrelha, String tipoRabo) {
-        super(nome, especie, raca, genero);
+    public Coelho(String nome, String especie, String raca, String sexo, String tipoOrelha, String tipoRabo) {
+        super(nome, especie, raca, sexo);
         this.tipoOrelha = tipoOrelha;
         this.tipoRabo = tipoRabo;
     }

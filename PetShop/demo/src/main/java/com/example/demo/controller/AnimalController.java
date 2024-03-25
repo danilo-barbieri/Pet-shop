@@ -29,7 +29,7 @@ public class AnimalController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody Animal animal) {
-        //return funcionarioService.atualizar(id, funcionario);
+        //return AnimalService.atualizar(id, animal);
         if(animalService.atualizar(id, animal) == null) {
 
             String mensagem = "O id informado não existe na base de dados";
