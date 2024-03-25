@@ -1,10 +1,14 @@
 package com.example.demo.model;
 
+import com.example.demo.validation.Porte;
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Cachorro extends Animal {
     private String pelagem;
+    @NotNull
+    @Porte
     private String porte;
 
     public Cachorro() {

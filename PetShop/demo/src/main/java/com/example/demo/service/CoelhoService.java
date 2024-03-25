@@ -18,7 +18,9 @@ public class CoelhoService {
     }
 
     public Coelho criar(Coelho coelho) {
-        return coelhoRepository.save(coelho);
+        if (coelho.getEspecie().equals("coelho")) {
+            return coelhoRepository.save(coelho);
+        } return null;
     }
 
     public Coelho atualizar(Long id, Coelho coelho) {

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Coelho;
+import com.example.demo.model.Gato;
 import com.example.demo.service.CoelhoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,12 @@ public class CoelhoController {
     }
 
     @PostMapping
-    public Coelho criar (@Valid @RequestBody Coelho coelho) {
-        return coelhoService.criar(coelho);
+    public ResponseEntity<?> criar (@Valid @RequestBody Coelho coelho) {
+        if (coelhoService.criar(coelho) == null){
+            String mensagem = "Permitido apenas o registro de Coelhos";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
+        }
+        return ResponseEntity.ok(coelho);
     }
 
     @PutMapping("/{id}")

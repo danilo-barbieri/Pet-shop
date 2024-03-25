@@ -17,7 +17,9 @@ public class CachorroService {
     }
 
     public Cachorro criar(Cachorro cachorro) {
-        return cachorroRepository.save(cachorro);
+        if (cachorro.getEspecie().equals("cachorro")) {
+            return cachorroRepository.save(cachorro);
+        } return null;
     }
 
     public Cachorro atualizar(Long id, Cachorro cachorro) {

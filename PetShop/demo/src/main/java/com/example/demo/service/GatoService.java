@@ -18,8 +18,11 @@ public class GatoService {
     }
 
     public Gato criar(Gato gato) {
-        return gatoRepository.save(gato);
+        if (gato.getEspecie().equals("gato")) {
+            return gatoRepository.save(gato);
+        } return null;
     }
+
 
     public Gato atualizar(Long id, Gato gato) {
         //verificar se o id é valido

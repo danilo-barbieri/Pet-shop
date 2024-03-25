@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Gato;
 import com.example.demo.service.GatoService;
 import jakarta.validation.Valid;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,15 +24,19 @@ public class GatoController {
     }
 
     @PostMapping
-    public Gato criar (@Valid @RequestBody Gato gato) {
-        return gatoService.criar(gato);
+    public ResponseEntity<?> criar (@Valid @RequestBody Gato gato) {
+        if (gatoService.criar(gato) == null){
+            String mensagem = "Permitido apenas o registro de Gatos";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
+        }
+        return ResponseEntity.ok(gato);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody Gato gato) {
 
         if(gatoService.atualizar(id, gato) == null) {
-            String mensagem = "O coelho informado não existe na base de dados";
+            String mensagem = "O gato informado não existe na base de dados";
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
         }
         return ResponseEntity.ok(gato);
