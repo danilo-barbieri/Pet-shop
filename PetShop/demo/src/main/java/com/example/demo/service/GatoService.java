@@ -13,7 +13,7 @@ public class GatoService {
     @Autowired
     GatoRepository gatoRepository;
 
-    public List<Gato> listarAnimal() {
+    public List<Gato> listarGato() {
         return gatoRepository.findAll();
     }
 
@@ -40,4 +40,5 @@ public class GatoService {
         return false;
     }
 
+    public int qtdGato() {return gatoRepository.findAll().size();}
 }

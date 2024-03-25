@@ -13,7 +13,7 @@ public class CoelhoService {
     @Autowired
     CoelhoRepository coelhoRepository;
 
-    public List<Coelho> listarAnimal() {
+    public List<Coelho> listarCoelho() {
         return coelhoRepository.findAll();
     }
 
@@ -40,4 +40,5 @@ public class CoelhoService {
         return false;
     }
 
+    public int qtdCoelho() {return coelhoRepository.findAll().size();}
 }

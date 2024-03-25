@@ -23,6 +23,7 @@ public class Animal {
     @Column(nullable = false)
     private String especie;
 
+    @NotNull
     private String raca;
 
     @NotNull
