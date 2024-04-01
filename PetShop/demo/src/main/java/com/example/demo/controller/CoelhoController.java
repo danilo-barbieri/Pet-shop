@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Coelho;
-import com.example.demo.model.Gato;
 import com.example.demo.service.CoelhoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

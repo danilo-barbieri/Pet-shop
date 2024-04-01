@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Animal;
+import com.example.demo.repository.AnimalRepository;
 import com.example.demo.service.AnimalService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class AnimalController {
     public List<Animal> listarAnimal() {
         return animalService.listarAnimal();
     }
+
 
     @PostMapping
     public Animal criar(@Valid @RequestBody Animal animal) {
