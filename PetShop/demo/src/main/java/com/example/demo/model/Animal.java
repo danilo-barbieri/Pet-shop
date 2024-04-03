@@ -24,6 +24,7 @@ public class Animal {
     private String especie;
 
     @NotNull
+    @Size(min = 3, max = 25)
     private String raca;
 
     @NotNull
